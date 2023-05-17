@@ -1,6 +1,6 @@
 # fic_flutter_model_rest_api
 
-A new Flutter project.
+Flutter Learning Json Serialization manual, using code generator & REST API
 
 ## Getting Started
 
