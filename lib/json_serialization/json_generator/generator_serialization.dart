@@ -1,8 +1,12 @@
 import 'dart:convert';
 
+import 'package:logger/logger.dart';
+
 import 'user.dart';
 
 void main(List<String> args) {
+  Logger logger = Logger();
+
   const String jsonString = """
 {
     "name": "Rozak",
@@ -13,10 +17,10 @@ void main(List<String> args) {
   Map<String, dynamic> userMap = jsonDecode(jsonString);
   var user = User.fromJson(userMap);
 
-  print('Halo, ${user.name}!');
-  print('Email verification link: ${user.email}');
+  logger.i('Halo, ${user.name}!');
+  logger.e('Email verification link: ${user.email}');
 
   String json = jsonEncode(user);
 
-  print('String json: $json');
+  logger.d('String json: $json');
 }

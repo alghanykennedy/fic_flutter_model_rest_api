@@ -8,6 +8,8 @@
 
 import 'dart:convert';
 
+import 'package:logger/logger.dart';
+
 class Category {
   final int id;
   final String name;
@@ -49,6 +51,8 @@ class Category {
 }
 
 void main() {
+  Logger logger = Logger();
+
   String jsonString = '''
 {
 "id": 1,
@@ -61,5 +65,5 @@ void main() {
 
   final category = Category.fromJson(jsonString);
 
-  print(category.name);
+  logger.d(category.name);
 }
